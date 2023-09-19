@@ -21,12 +21,12 @@ public class spacecraft : MonoBehaviour
         if (isMovingStraight)
         {
             // Move in a straight line (adjust the direction and speed as needed).
-            transform.Translate(Vector3.left * Time.deltaTime * 5f);
+            transform.Translate(Vector3.left * Time.deltaTime * 80f);
         }
         else
         {
             // Rotate around the current target.
-            transform.RotateAround(currentTarget.position, Vector3.forward, 50 * Time.deltaTime);
+            transform.RotateAround(currentTarget.position, Vector3.forward, 150 * Time.deltaTime);
         }
 
         // Check for spacebar input to toggle between straight and circling movement.
@@ -36,17 +36,17 @@ public class spacecraft : MonoBehaviour
         }
     }
 
-    void CheckPlanetProximity()
+   void CheckPlanetProximity()
     {
-        // Minimum distance to consider proximity to a planet.
+        //Minimum distance to consider proximity to a planet.
         float proximityDistance = 3.0f;
-
+    
         foreach (Transform planet in Targets)
         {
             float distance = Vector3.Distance(transform.position, planet.position);
             
             // If the spacecraft is close enough to a planet, switch the target.
-            if (distance < proximityDistance)
+            if (distance < proximityDistance && currentTarget!=planet)
             {
                 currentTarget = planet;
                 isMovingStraight = false; // Ensure circling mode is active.
