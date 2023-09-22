@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class FollowObject : MonoBehaviour
 {
-    public Transform target; // Reference to the target object
-    public float smoothSpeed = 0.125f; // Controls the smoothness of camera movement
-    public Vector3 offset; // Offset from the target's position
-    public float minDistance = 1.0f; // Minimum distance before the camera starts following
-    public float maxDistance = 10.0f; // Maximum distance the camera can be from the target
+    public Transform target; 
+    public float smoothSpeed = 0.125f;
+    public Vector3 offset;
+    public float minDistance = 1.0f;
+    public float maxDistance = 10.0f;
 
     private Vector3 initialPosition; // Initial position of the camera
 
